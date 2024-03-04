@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import Modal from "./Modal";
 
-const MovieList = ({ data, query }) => {
+const MovieList = ({ data, country }) => {
   const [modal, setModal] = useState(false);
   const [currentMovie, setCurrentMovie] = useState(null);
 
@@ -32,6 +32,7 @@ const MovieList = ({ data, query }) => {
           open={modal}
           onClose={() => setModal(false)}
           movie={currentMovie}
+          country={country}
         />
         <div className="movies" onClick={() => setModal(true)}>
           {movieDivs.map((movie) => movie)}

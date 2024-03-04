@@ -66,7 +66,7 @@ function App() {
   {!loading ? (
         !firstLoad ? (
           movies.length > 0 ? (
-            <MovieList data={movies} query={movieQuery} />
+            <MovieList data={movies} country={countryQuery}/>
           ) : (
             <div className="photo-container">
               <h2>Results for: "{movieQuery}"</h2>
