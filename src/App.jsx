@@ -75,7 +75,7 @@ function App() {
           )
         ) : null
       ) : (
-        <h3>Loading...</h3>
+        <h3 className="loading">Loading...</h3>
       )}
     </div>
   );

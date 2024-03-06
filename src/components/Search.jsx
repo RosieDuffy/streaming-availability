@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { PropTypes } from "prop-types";
 import Select from "react-select";
@@ -6,6 +6,8 @@ import Select from "react-select";
 import options from "../options";
 
 const Search = ({ changeMovieQuery, changeCountryQuery }) => {
+  const [transformForm, setTransformForm] = useState("translateY(30vh)");
+  const [formSubmitted, setFormSubmitted] = useState(false);
   // reference to the users input in the search form
   const movieSearch = useRef();
   const countrySearch = useRef();
@@ -15,38 +17,49 @@ const Search = ({ changeMovieQuery, changeCountryQuery }) => {
     e.preventDefault();
     changeMovieQuery(movieSearch.current.value);
     changeCountryQuery(countrySearch.current.value);
-
+    setTransformForm("translateY(0)");
+    setFormSubmitted(true);
     // //inserts users search into the url and redirects to results
     // let path = `/search/${userInput.current.value}`;
     // navigate(path);
   };
 
   return (
-    <form className="searchContainer" onSubmit={handleSubmit}>
-      <input
-        ref={movieSearch}
-        type="search"
-        name="search"
-        id="searchMovie"
-        placeholder="Search for movies..."
-        required
-      />
+    <>
+      {!formSubmitted ? (
+        <div className="typewriter">
+          <h1>Where can I watch?....</h1>
+        </div>
+      ) : null}
+      <form
+        className="searchContainer"
+        onSubmit={handleSubmit}
+        style={{ transform: transformForm, transition: "transform 1s" }}
+      >
+        <input
+          ref={movieSearch}
+          type="text"
+          name="search"
+          id="searchMovie"
+          placeholder="Search for movies..."
+          required
+        />
 
-      <label htmlFor="country">Choose Country :</label>
-      <select id="country" ref={countrySearch} defaultValue="" required>
-        <option value="" disabled>
-          Select a country
-        </option>
-        {options.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.label}
+        <select id="country" ref={countrySearch} defaultValue="" required>
+          <option value="" disabled>
+            Select a country
           </option>
-        ))}
-      </select>
-      <button type="submit" className="search-button">
-        Search
-      </button>
-    </form>
+          {options.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </select>
+        <button type="submit" className="search-button">
+          Search
+        </button>
+      </form>
+    </>
   );
 };
 

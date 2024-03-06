@@ -53,10 +53,11 @@ const options = [
   { value: "th", label: "Thailand" },
   { value: "tr", label: "Turkey" },
   { value: "ua", label: "Ukraine" },
+  { value: "ae", label: "United Arab Emirates" },
   { value: "gb", label: "United Kingdom" },
   { value: "us", label: "United States" },
-  { value: "vn", label: "Vietnam" },
-  { value: "ae", label: "United Arab Emirates" },
+  { value: "vn", label: "Vietnam" }
+ 
 ];
 
 export default options;
