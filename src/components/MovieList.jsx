@@ -26,7 +26,7 @@ const MovieList = ({ data, country }) => {
   ));
 
   return (
-    <div className="movieContainer">
+    <div className="movieContainer  slide-in-bottom">
       <Modal
         open={modal}
         onClose={() => setModal(false)}

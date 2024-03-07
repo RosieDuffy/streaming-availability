@@ -4,6 +4,7 @@ import { PropTypes } from "prop-types";
 import Select from "react-select";
 
 import options from "../options";
+import MainTitle from "./MainTitle";
 
 const Search = ({ changeMovieQuery, changeCountryQuery }) => {
   const [transformForm, setTransformForm] = useState("translateY(30vh)");
@@ -27,14 +28,17 @@ const Search = ({ changeMovieQuery, changeCountryQuery }) => {
   return (
     <>
       {!formSubmitted ? (
-        <div className="typewriter">
-          <h1>Where can I watch?....</h1>
-        </div>
+        <>
+          <div className="bg"></div>
+          <div className="bg bg2"></div>
+          <div className="bg bg3"></div>
+          <MainTitle />
+        </>
       ) : null}
       <form
         className="searchContainer"
         onSubmit={handleSubmit}
-        style={{ transform: transformForm, transition: "transform 1s" }}
+        style={{ transform: transformForm, transition: "transform .8s" }}
       >
         <input
           ref={movieSearch}
