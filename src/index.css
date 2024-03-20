@@ -47,7 +47,7 @@ select:focus,
 input:focus {
   outline: none;
   border-bottom: 1px solid #fff;
-  background-color: #11101d;
+  background-color: transparent;
 }
 
 input {
