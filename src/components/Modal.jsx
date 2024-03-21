@@ -90,7 +90,7 @@ const Modal = ({ open, onClose, movie, country }) => {
                                 <a href={service.link}>
                                   <img
                                     className="streaming-icon"
-                                    src="src/assets/AppleTV.png"
+                                    src="./assets/AppleTV.png"
                                     alt="apple tv logo"
                                   />
                                 </a>
@@ -102,7 +102,7 @@ const Modal = ({ open, onClose, movie, country }) => {
                                 <a href={service.link}>
                                   <img
                                     className="streaming-icon"
-                                    src="src/assets/Logonetflix.png"
+                                    src="./assets/Logonetflix.png"
                                     alt="netflix logo"
                                   />
                                 </a>
@@ -114,7 +114,7 @@ const Modal = ({ open, onClose, movie, country }) => {
                                 <a href={service.link}>
                                   <img
                                     className="streaming-icon"
-                                    src="src/assets/Disney+_logo.svg.png"
+                                    src="./assets/Disney+_logo.svg.png"
                                     alt="disney plus logo"
                                   />
                                 </a>
@@ -126,7 +126,7 @@ const Modal = ({ open, onClose, movie, country }) => {
                                 <a href={service.link}>
                                   <img
                                     className="streaming-icon"
-                                    src="src/assets/hulu-logo-png.png"
+                                    src="./assets/hulu-logo-png.png"
                                     alt="hulu logo"
                                   />
                                 </a>
@@ -138,7 +138,7 @@ const Modal = ({ open, onClose, movie, country }) => {
                                 <a href={service.link}>
                                   <img
                                     className="streaming-icon"
-                                    src="src/assets/Prime_logo.png"
+                                    src="./assets/Prime_logo.png"
                                     alt="prime video logo"
                                   />
                                 </a>
@@ -150,7 +150,7 @@ const Modal = ({ open, onClose, movie, country }) => {
                                 <a href={service.link}>
                                   <img
                                     className="streaming-icon"
-                                    src="src/assets/Paramount_Plus.svg.png"
+                                    src="./assets/Paramount_Plus.svg.png"
                                     alt="paramount logo"
                                   />
                                 </a>
