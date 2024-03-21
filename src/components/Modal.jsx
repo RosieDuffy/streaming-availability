@@ -81,7 +81,7 @@ const Modal = ({ open, onClose, movie, country }) => {
                 <>
                   {uniqueServices.length > 0 ? (
                     <>
-                      <h4>Available on:</h4>
+                      <h4>Available onç:</h4>
                       <ul className="streaming-list">
                         {uniqueServices.map((service) => {
                           if (service.service === "apple") {
