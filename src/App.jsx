@@ -15,7 +15,7 @@ function App() {
   const [firstLoad, setFirstLoad] = useState(true);
 
   const API_KEY = "5a11fc22";
-  const url = `http://www.omdbapi.com/?apikey=${API_KEY}&s=${movieQuery}&type=movie`;
+  const url = `https://www.omdbapi.com/?apikey=${API_KEY}&s=${movieQuery}&type=movie`;
 
   useEffect(() => {
     if (!movieQuery && !countryQuery) return;
@@ -43,10 +43,10 @@ function App() {
         // handle error
         console.log("Error fetching and parsing data", error);
       });
-      return () => {
-        activeFetch = false;
-      };
-  }, [movieQuery,countryQuery]);
+    return () => {
+      activeFetch = false;
+    };
+  }, [movieQuery, countryQuery]);
 
   // handleQueryChange function to set the query parameter
   const handleMovieQueryChange = (searchText) => {
@@ -63,14 +63,16 @@ function App() {
         changeMovieQuery={handleMovieQueryChange}
         changeCountryQuery={handleCountryQueryChange}
       />
-  {!loading ? (
+      {!loading ? (
         !firstLoad ? (
           movies.length > 0 ? (
-            <MovieList data={movies} country={countryQuery}/>
+            <MovieList data={movies} country={countryQuery} />
           ) : (
             <div className="photo-container">
               <h2>Results for: "{movieQuery}"</h2>
-              <h3>Sorry, there were no results for your search. Please try again</h3>
+              <h3>
+                Sorry, there were no results for your search. Please try again
+              </h3>
             </div>
           )
         ) : null
