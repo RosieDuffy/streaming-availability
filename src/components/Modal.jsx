@@ -138,7 +138,7 @@ const Modal = ({ open, onClose, movie, country }) => {
                                 <a href={service.link}>
                                   <img
                                     className="streaming-icon"
-                                    src="./public/assets/Prime_logo.png"
+                                    src="./assets/Prime_logo.png"
                                     alt="prime video logo"
                                   />
                                 </a>
